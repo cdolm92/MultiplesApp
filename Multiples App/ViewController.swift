@@ -35,6 +35,10 @@ class ViewController: UIViewController {
             updateAddByLbl()
             currentSum = totalSum
 
+        } else {
+            
+            restartGame()
+        
         }
         
         
@@ -66,6 +70,23 @@ class ViewController: UIViewController {
         addByLbl.text = "\(currentSum) + \(addBy) = \(totalSum)"
         
        
+    }
+    
+    func restartGame() {
+        
+        addBy = 0
+        
+        addByMultiple.text = ""
+        addByLbl.text = "Press Add to add!"
+        
+        logoImg.hidden = false
+        playBtn.hidden = false
+        addByMultiple.hidden = false
+        
+        addBtn.hidden = true
+        addByLbl.hidden = true
+        
+    
     }
     
 
