@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     //Properties
     var currentSum = 0
     var addBy = 0
+    var totalSum = 0
     
     
     //these are my outlets
@@ -26,9 +27,17 @@ class ViewController: UIViewController {
    
     
     @IBAction func onAddBtnPressed(sender: UIButton!) {
+       
+        if currentSum < 200 {
+       
+            addBy = Int(addByMultiple.text!)!
+            totalSum = currentSum + addBy
+            updateAddByLbl()
+            currentSum = totalSum
+
+        }
         
-        currentSum = currentSum + Int(addByMultiple.text!)!
-        updateAddByLbl()
+        
         
     }
     
@@ -43,8 +52,8 @@ class ViewController: UIViewController {
             addBtn.hidden = false
             addByLbl.hidden = false
             
-            addBy = Int(addByMultiple.text!)!
-            currentSum = 0
+          addBy = Int(addByMultiple.text!)!
+          currentSum = 0
             
             
             
@@ -53,7 +62,10 @@ class ViewController: UIViewController {
     }
     
     func updateAddByLbl() {
-        addByLbl.text = "\(currentSum) = \(currentSum) + \(addBy)"
+      
+        addByLbl.text = "\(currentSum) + \(addBy) = \(totalSum)"
+        
+       
     }
     
 
