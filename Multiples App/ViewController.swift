@@ -23,14 +23,37 @@ class ViewController: UIViewController {
     @IBOutlet weak var addBtn: UIButton!
     @IBOutlet weak var addByLbl: UILabel!
     
+   
+    
+    @IBAction func onAddBtnPressed(sender: UIButton!) {
+        
+        currentSum = currentSum + Int(addByMultiple.text!)!
+        updateAddByLbl()
+        
+    }
     
     @IBAction func onPlayBtnPressed(sender: UIButton!) {
         
         if addByMultiple.text != nil && addByMultiple.text != "" {
             
+            logoImg.hidden = true
+            playBtn.hidden = true
+            addByMultiple.hidden = true
             
-        }
+            addBtn.hidden = false
+            addByLbl.hidden = false
+            
+            addBy = Int(addByMultiple.text!)!
+            currentSum = 0
+            
+            
+            
+            }
         
+    }
+    
+    func updateAddByLbl() {
+        addByLbl.text = "\(currentSum) = \(currentSum) + \(addBy)"
     }
     
 
