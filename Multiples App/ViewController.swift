@@ -28,19 +28,23 @@ class ViewController: UIViewController {
     
     @IBAction func onAddBtnPressed(sender: UIButton!) {
        
-        if currentSum < 200 {
+        if currentSum < 199 {
        
             addBy = Int(addByMultiple.text!)!
             totalSum = currentSum + addBy
             updateAddByLbl()
             currentSum = totalSum
-
-        } else {
             
-            restartGame()
-        
+            if currentSum >= 200 {
+            
+                restartGame()
+            }
+
         }
         
+        
+        
+              
         
         
     }
